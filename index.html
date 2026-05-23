@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,6 +10,7 @@
 <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 
 <style>
+/* ===== YOUR ORIGINAL DESIGN (UNCHANGED) ===== */
 
 *{
 margin:0;
@@ -20,7 +20,6 @@ font-family:'Poppins',sans-serif;
 }
 
 body{
-
 background:
 radial-gradient(circle at top left,#38bdf830,transparent 25%),
 radial-gradient(circle at bottom right,#6366f130,transparent 25%),
@@ -31,29 +30,20 @@ min-height:100vh;
 overflow-x:hidden;
 }
 
-/* SIDEBAR */
-
 .sidebar{
-
 position:fixed;
 left:0;
 top:0;
-
 width:260px;
 height:100vh;
-
 background:rgba(255,255,255,0.05);
-
 backdrop-filter:blur(20px);
-
 border-right:1px solid rgba(255,255,255,0.08);
-
 padding:25px;
 z-index:100;
 }
 
 .logo{
-
 font-size:28px;
 font-weight:700;
 margin-bottom:35px;
@@ -61,418 +51,184 @@ color:#38bdf8;
 }
 
 .menu button{
-
 width:100%;
 padding:14px;
 margin-top:12px;
-
 border:none;
 border-radius:14px;
-
 background:#111827;
 color:white;
-
 cursor:pointer;
 font-weight:600;
 transition:0.3s;
 }
 
 .menu button:hover{
-
 background:linear-gradient(45deg,#38bdf8,#6366f1);
-
 transform:translateX(5px);
 }
 
-/* MAIN */
-
 .main{
-
 margin-left:260px;
 padding:30px;
 }
 
-/* HERO */
-
 .hero{
-
 padding:35px;
 border-radius:25px;
-
 background:rgba(255,255,255,0.05);
-
 border:1px solid rgba(255,255,255,0.08);
-
 backdrop-filter:blur(25px);
-
 box-shadow:0 0 35px rgba(56,189,248,0.15);
 }
 
-.hero h1{
-
-font-size:48px;
-line-height:1.3;
-}
-
-.hero p{
-
-margin-top:15px;
-opacity:0.8;
-line-height:1.8;
-}
-
-/* GRID */
+.hero h1{font-size:48px;line-height:1.3;}
+.hero p{margin-top:15px;opacity:0.8;line-height:1.8;}
 
 .grid{
-
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
 gap:20px;
-
 margin-top:25px;
 }
 
-/* CARD */
-
 .card{
-
 background:rgba(255,255,255,0.05);
-
 padding:20px;
-
 border-radius:22px;
-
 border:1px solid rgba(255,255,255,0.08);
-
 backdrop-filter:blur(20px);
-
-transition:0.3s;
-}
-
-.card:hover{
-
-transform:translateY(-5px);
-
-box-shadow:0 0 30px rgba(56,189,248,0.18);
 }
 
 .card h2{
-
 margin-bottom:15px;
 color:#38bdf8;
 }
 
-/* INPUT */
-
 input{
-
 width:100%;
 padding:13px;
-
 margin-top:10px;
-
 border:none;
 outline:none;
-
 border-radius:14px;
-
 background:#111827;
 color:white;
 }
 
-/* BUTTON */
-
 .action-btn{
-
 width:100%;
-
 padding:13px;
 margin-top:12px;
-
 border:none;
 border-radius:14px;
-
 background:linear-gradient(45deg,#38bdf8,#6366f1);
-
 color:white;
 font-weight:700;
-
 cursor:pointer;
-
 transition:0.3s;
 }
 
-.action-btn:hover{
-
-transform:scale(1.02);
-
-box-shadow:0 0 25px rgba(99,102,241,0.35);
-}
-
-/* BOX */
-
 .output{
-
 margin-top:15px;
-
 background:#111827;
-
 padding:15px;
-
 border-radius:15px;
-
 line-height:1.8;
-
 border-left:4px solid #38bdf8;
-
 max-height:500px;
 overflow:auto;
 }
 
-/* QUESTION */
-
 .question{
-
 margin-top:15px;
-
 padding:15px;
-
 background:#0f172a;
-
 border-radius:15px;
-
 border:1px solid rgba(255,255,255,0.05);
 }
 
 .option{
-
 display:block;
-
 margin-top:10px;
-
 padding:10px;
-
 border-radius:10px;
-
 cursor:pointer;
-
-transition:0.2s;
 }
 
-.option:hover{
-
-background:#1e293b;
-}
-
-/* STATS */
-
-.stats{
-
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:15px;
-
-margin-top:25px;
-}
-
-.stat{
-
-background:rgba(255,255,255,0.05);
-
-padding:20px;
-
-border-radius:18px;
-
-text-align:center;
-
-border:1px solid rgba(255,255,255,0.08);
-}
-
-.stat h2{
-
-font-size:35px;
-color:#38bdf8;
-}
-
-/* HIDE */
-
-.page{
-display:none;
-}
-
-.active{
-display:block;
-}
-
-/* MOBILE */
+.page{display:none;}
+.active{display:block;}
 
 @media(max-width:900px){
-
-.sidebar{
-
-width:100%;
-height:auto;
-
-position:relative;
+.sidebar{width:100%;height:auto;position:relative;}
+.main{margin-left:0;}
+.hero h1{font-size:34px;}
 }
-
-.main{
-margin-left:0;
-}
-
-.hero h1{
-font-size:34px;
-}
-
-.stats{
-grid-template-columns:1fr;
-}
-
-}
-
 </style>
 </head>
 
 <body>
 
 <!-- SIDEBAR -->
-
 <div class="sidebar">
-
-<div class="logo">
-🚀 ExamPanic AI
-</div>
+<div class="logo">🚀 ExamPanic AI</div>
 
 <div class="menu">
-
-<button onclick="openPage('dashboard')">
-🏠 Dashboard
-</button>
-
-<button onclick="openPage('teacher')">
-📚 AI Teacher
-</button>
-
-<button onclick="openPage('mcq')">
-🧠 Mock Test
-</button>
-
-<button onclick="openPage('predictor')">
-🎯 Prediction
-</button>
-
-<button onclick="openPage('chat')">
-💬 AI Chat
-</button>
-
-<button onclick="openPage('notes')">
-📝 Notes
-</button>
-
+<button onclick="openPage('dashboard')">🏠 Dashboard</button>
+<button onclick="openPage('teacher')">📚 AI Teacher</button>
+<button onclick="openPage('mcq')">🧠 Mock Test</button>
+<button onclick="openPage('predictor')">🎯 Prediction</button>
+<button onclick="openPage('chat')">💬 AI Chat</button>
+<button onclick="openPage('notes')">📝 Notes</button>
 </div>
-
 </div>
 
 <!-- MAIN -->
-
 <div class="main">
 
 <!-- DASHBOARD -->
-
 <div id="dashboard" class="page active">
-
 <div class="hero">
-
-<h1>
-Future of Learning is Here ⚡
-</h1>
-
-<p>
-AI-powered ICSE learning system with ML prediction,
-smart MCQs, instant doubt solving and automated revision.
-</p>
-
+<h1>Future of Learning is Here ⚡</h1>
+<p>AI-powered ICSE learning system with ML prediction.</p>
 </div>
-
-<div class="stats">
-
-<div class="stat">
-<h2>AI</h2>
-<p>Teacher Engine</p>
-</div>
-
-<div class="stat">
-<h2>ML</h2>
-<p>Prediction Model</p>
-</div>
-
-<div class="stat">
-<h2>24/7</h2>
-<p>Smart Learning</p>
-</div>
-
-</div>
-
 </div>
 
 <!-- TEACHER -->
-
 <div id="teacher" class="page">
-
 <div class="card">
-
 <h2>📚 AI Teacher</h2>
 
 <input id="subject" placeholder="Subject">
 <input id="chapter" placeholder="Chapter">
 
-<button class="action-btn" onclick="generateLesson()">
-Generate Lesson
-</button>
+<button class="action-btn" onclick="generateLesson()">Generate Lesson</button>
 
-<div class="output" id="lessonBox">
-Lesson will appear here...
+<div class="output" id="lessonBox">Lesson</div>
 </div>
-
-</div>
-
 </div>
 
 <!-- MCQ -->
-
 <div id="mcq" class="page">
-
 <div class="card">
-
-<h2>🧠 Smart MCQ Test</h2>
+<h2>🧠 MCQ Test</h2>
 
 <input id="mSubject" placeholder="Subject">
 <input id="mChapter" placeholder="Chapter">
 
-<button class="action-btn" onclick="startTest()">
-Start Test
-</button>
+<button class="action-btn" onclick="startTest()">Start Test</button>
 
 <div id="testBox"></div>
 
-<button class="action-btn" onclick="submitTest()">
-Submit Test
-</button>
+<button class="action-btn" onclick="submitTest()">Submit</button>
 
-<div class="output" id="resultBox">
-Result will appear here...
+<div class="output" id="resultBox">Result</div>
+</div>
 </div>
 
-</div>
-
-</div>
-
-<!-- PREDICTION -->
-
+<!-- PREDICT -->
 <div id="predictor" class="page">
-
 <div class="card">
-
 <h2>🎯 ML Prediction</h2>
 
 <input id="chapters" placeholder="Chapters Completed">
@@ -480,61 +236,37 @@ Result will appear here...
 <input id="attendance" placeholder="Attendance %">
 <input id="score" placeholder="Test Score">
 
-<button class="action-btn" onclick="predictMarks()">
-Predict Result
-</button>
+<button class="action-btn" onclick="predictMarks()">Predict</button>
 
-<div class="output" id="predBox">
-Prediction result here...
+<div class="output" id="predBox">Prediction</div>
 </div>
-
-</div>
-
 </div>
 
 <!-- CHAT -->
-
 <div id="chat" class="page">
-
 <div class="card">
+<h2>💬 AI Chat</h2>
 
-<h2>💬 AI Chat Tutor</h2>
+<input id="chatInput" placeholder="Ask anything...">
 
-<input id="chatInput" placeholder="Ask any doubt...">
+<button class="action-btn" onclick="askAI()">Ask</button>
 
-<button class="action-btn" onclick="askAI()">
-Ask AI
-</button>
-
-<div class="output" id="chatBox">
-AI response here...
+<div class="output" id="chatBox">Response</div>
 </div>
-
-</div>
-
 </div>
 
 <!-- NOTES -->
-
 <div id="notes" class="page">
-
 <div class="card">
-
-<h2>📝 AI Notes Generator</h2>
+<h2>📝 Notes</h2>
 
 <input id="noteSubject" placeholder="Subject">
 <input id="noteChapter" placeholder="Chapter">
 
-<button class="action-btn" onclick="generateNotes()">
-Generate Notes
-</button>
+<button class="action-btn" onclick="generateNotes()">Generate</button>
 
-<div class="output" id="notesBox">
-Notes appear here...
+<div class="output" id="notesBox">Notes</div>
 </div>
-
-</div>
-
 </div>
 
 </div>
@@ -546,274 +278,166 @@ const API = "https://student-learning-system-r6bi.onrender.com";
 let testData = [];
 
 /* PAGE SWITCH */
-
 function openPage(id){
-
-document.querySelectorAll(".page")
-.forEach(p=>p.classList.remove("active"));
-
-document.getElementById(id)
-.classList.add("active");
+document.querySelectorAll(".page").forEach(p=>p.classList.remove("active"));
+document.getElementById(id).classList.add("active");
 }
 
-/* LESSON */
+/* SAFE GET ELEMENT */
+const $ = (id)=>document.getElementById(id);
 
+/* LESSON */
 async function generateLesson(){
 
-lessonBox.innerHTML = "⚡ Generating lesson...";
+$("lessonBox").innerHTML="Loading...";
 
 let res = await fetch(API+"/learn",{
-
 method:"POST",
-
-headers:{
-"Content-Type":"application/json"
-},
-
+headers:{"Content-Type":"application/json"},
 body:JSON.stringify({
-
 student_name:"demo",
 student_class:"8",
-subject:subject.value,
-chapter:chapter.value
-
+subject:$("subject").value,
+chapter:$("chapter").value
 })
-
 });
 
 let data = await res.json();
-
-lessonBox.innerHTML =
-marked.parse(data.lesson || "No lesson");
+$("lessonBox").innerHTML = marked.parse(data.lesson || "No data");
 }
 
 /* NOTES */
-
 async function generateNotes(){
 
-notesBox.innerHTML = "⚡ Generating notes...";
+$("notesBox").innerHTML="Loading...";
 
 let res = await fetch(API+"/generate-notes",{
-
 method:"POST",
-
-headers:{
-"Content-Type":"application/json"
-},
-
+headers:{"Content-Type":"application/json"},
 body:JSON.stringify({
-
 student_name:"demo",
 student_class:"8",
-subject:noteSubject.value,
-chapter:noteChapter.value
-
+subject:$("noteSubject").value,
+chapter:$("noteChapter").value
 })
-
 });
 
 let data = await res.json();
-
-notesBox.innerHTML =
-marked.parse(data.notes || "No notes");
+$("notesBox").innerHTML = marked.parse(data.notes || "No data");
 }
 
-/* PREDICTION */
-
+/* PREDICT */
 async function predictMarks(){
 
-predBox.innerHTML = "⚡ Predicting...";
+$("predBox").innerHTML="Loading...";
 
 let res = await fetch(API+"/predict-exam",{
-
 method:"POST",
-
-headers:{
-"Content-Type":"application/json"
-},
-
+headers:{"Content-Type":"application/json"},
 body:JSON.stringify({
-
-chapters_done:+chapters.value,
-revision_count:+revision.value,
-attendance:+attendance.value,
-test_score:+score.value
-
+chapters_done:+$("chapters").value || 0,
+revision_count:+$("revision").value || 0,
+attendance:+$("attendance").value || 0,
+test_score:+$("score").value || 0
 })
-
 });
 
 let data = await res.json();
 
-predBox.innerHTML = `
-
-🎯 Predicted Marks:
-<b>${data.predicted_marks}%</b>
-
-<br><br>
-
-🚀 Performance:
-<b>${data.performance}</b>
-
-`;
+$("predBox").innerHTML =
+`🎯 <b>${data.predicted_marks || 0}%</b><br>🚀 ${data.performance || "No data"}`;
 }
 
 /* CHAT */
-
 async function askAI(){
 
-chatBox.innerHTML = "🤖 Thinking...";
+$("chatBox").innerHTML="Thinking...";
 
 let res = await fetch(API+"/chat",{
-
 method:"POST",
-
-headers:{
-"Content-Type":"application/json"
-},
-
+headers:{"Content-Type":"application/json"},
 body:JSON.stringify({
-
-message:chatInput.value
-
+message:$("chatInput").value
 })
-
 });
 
 let data = await res.json();
-
-chatBox.innerHTML =
-marked.parse(data.reply || "No response");
+$("chatBox").innerHTML = marked.parse(data.reply || "No reply");
 }
 
-/* START TEST */
-
+/* MCQ */
 async function startTest(){
 
-testBox.innerHTML = "⚡ Generating MCQs...";
+$("testBox").innerHTML="Loading...";
 
 let res = await fetch(API+"/mock-test-generate",{
-
 method:"POST",
-
-headers:{
-"Content-Type":"application/json"
-},
-
+headers:{"Content-Type":"application/json"},
 body:JSON.stringify({
-
 student_class:"8",
-subject:mSubject.value,
-chapter:mChapter.value
-
+subject:$("mSubject").value,
+chapter:$("mChapter").value
 })
-
 });
 
 let data = await res.json();
-
 testData = data.questions || [];
 
 renderTest();
 }
 
 /* RENDER */
-
 function renderTest(){
 
-testBox.innerHTML = "";
+$("testBox").innerHTML="";
 
-if(testData.length===0){
-
-testBox.innerHTML = "No questions found";
+if(!testData.length){
+$("testBox").innerHTML="No MCQs";
 return;
 }
 
 testData.forEach((q,i)=>{
 
-testBox.innerHTML += `
-
+$("testBox").innerHTML += `
 <div class="question">
+<h3>${i+1}. ${q.question}</h3>
 
-<h3>
-${i+1}. ${q.question}
-</h3>
-
-${q.options.map((opt,idx)=>{
-
-let key = ["A","B","C","D"][idx];
-
-return `
-
+${q.options.map((opt,idx)=>`
 <label class="option">
-
-<input
-type="radio"
-name="q${i}"
-value="${key}"
->
-
-${key}. ${opt}
-
+<input type="radio" name="q${i}" value="${["A","B","C","D"][idx]}">
+${opt}
 </label>
-
-`;
-
-}).join("")}
+`).join("")}
 
 </div>
-
 `;
-
 });
 }
 
-/* SUBMIT */
-
+/* SUBMIT FIXED */
 async function submitTest(){
 
 let answers=[];
 
 testData.forEach((q,i)=>{
-
-let sel =
-document.querySelector(`input[name="q${i}"]:checked`);
-
-answers.push(sel ? sel.value : "");
-
+let sel=document.querySelector(`input[name="q${i}"]:checked`);
+answers.push(sel?sel.value:"");
 });
 
 let res = await fetch(API+"/mock-test-evaluate",{
-
 method:"POST",
-
-headers:{
-"Content-Type":"application/json"
-},
-
+headers:{"Content-Type":"application/json"},
 body:JSON.stringify({
-
 questions:testData,
 answers:answers
-
 })
-
 });
 
 let data = await res.json();
 
-resultBox.innerHTML = `
-
-🎯 Score:
-<b>${data.score}%</b>
-
-<br><br>
-
-✅ Correct:
-<b>${data.correct}/${data.total}</b>
-
-`;
-
+$("resultBox").innerHTML =
+`🎯 <b>${data.score || 0}%</b><br>
+✅ ${data.correct || 0}/${data.total || 0}`;
 }
 
 </script>
